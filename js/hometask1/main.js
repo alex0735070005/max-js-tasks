@@ -1,3 +1,6 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable no-console */
+
 // 2 code to be will-formatted, clean and readable
 // 3 Describe in the comments why is the second console not called
 
@@ -27,8 +30,9 @@ switch (login) {
   case '':
     message = 'Hi undefined';
     break;
+  default: message = '';
 }
 
-message = message ? message : '';
+message = login === 'Maks' ? 'Hi, Maks' : login === 'Serg' ? 'Hi, Serg' : login === '' ? 'Hi undefined' : '';
 
 console.log(message);
