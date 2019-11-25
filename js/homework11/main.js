@@ -1,28 +1,38 @@
+/* eslint-disable no-console */
 'use strict';
 
 function validateTitle(title) {
-  const firstChar = title[0];
-  const isValidLength = title.length - 2 * title.length - 20 <= 0;
+  if (typeof title !== 'string') {
+    return 'incorect data';
+  }
 
-  if (Number(firstChar)) {
+  if ((title.length - 2) * (title.length - 20) > 0) {
     return 'INVALID';
   }
 
-  // if first char is number and title < 2 or title > 20
-  if (!isValidLength) {
-    return 'INVALID';
-  }
+  const checkData = ',![].?';
 
-  // if first char number and first char is not upperCase
-  if (firstChar !== firstChar.toUpperCase()) {
-    return 'INVALID';
-  }
-  const chars = '[,!'
-  for (const char of title) {
-    console.log(char);
-  }
+  const fChar = title[0];
 
-  return 'VALID';
+  const isContainChars = !!(title.split('').find((char) => checkData.includes(char)));
+
+  const isValidFChar = (fChar === fChar.toUpperCase()) === !Number(fChar);
+
+  return (isContainChars && isValidFChar) ? 'VALID' : 'INVALID';
 }
 
-console.log(validateTitle('AQadddd'));
+console.log('check "hello"', validateTitle('hello'));
+console.log('check "Hello"', validateTitle('Hello'));
+console.log('check "Hello!"', validateTitle('Hello!'));
+console.log('check "1ello"', validateTitle('1hello'));
+console.log('check "1ello?"', validateTitle('1hello?'));
+console.log('check "hi" > 2', validateTitle('hi'));
+console.log('check "helloooooooooooooooo" less 20', validateTitle('helloooooooooooooooo'));
+
+const sum = (num1, num2) => Number(num1) + (num2 % 15 ? num2 : num2 * -1);
+
+console.log('check "1, 2"', sum('1', 2));
+console.log('check "1, 15"', sum('1', 15));
+console.log('check "1, 25"', sum('1', 25));
+console.log('check "1, 3"', sum('1', 3));
+console.log('check "1, 30"', sum('1', 30));
