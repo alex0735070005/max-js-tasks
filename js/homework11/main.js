@@ -42,3 +42,4 @@ console.log('check "1, 15"', sum('1', 15));
 console.log('check "1, 25"', sum('1', 25));
 console.log('check "1, 3"', sum('1', 3));
 console.log('check "1, 30"', sum('1', 30));
+console.log('check "15, 15"', sum(15, 15));
