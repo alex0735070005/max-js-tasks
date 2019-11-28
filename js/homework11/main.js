@@ -10,13 +10,13 @@ function validateTitle(title) {
     return 'INVALID';
   }
 
-  const checkData = ',![].?';
+  const checkData = [' ','!',':','-','?','.',','];
 
   const fChar = title[0];
 
   const isContainChars = !!(title.split('').find((char) => checkData.includes(char)));
 
-  const isValidFChar = (fChar === fChar.toUpperCase()) === !Number(fChar);
+  const isValidFChar = ((fChar.codePointAt() - 65) * (fChar.codePointAt() - 90)) <= 0;
 
   return (isContainChars && isValidFChar) ? 'VALID' : 'INVALID';
 }
@@ -28,6 +28,7 @@ console.log('check "1ello"', validateTitle('1hello'));
 console.log('check "1ello?"', validateTitle('1hello?'));
 console.log('check "hi" > 2', validateTitle('hi'));
 console.log('check "helloooooooooooooooo" less 20', validateTitle('helloooooooooooooooo'));
+console.log('check "?hello" less 20', validateTitle('?hello'));
 
 const sum = (num1, num2) => Number(num1) + (num2 % 15 ? num2 : num2 * -1);
 
