@@ -23,23 +23,18 @@ function validateTitle(title) {
   return isValidChars ? 'VALID' : 'INVALID';
 }
 
-console.log('check "hello"', validateTitle('hello'));
-console.log('check "Hello"', validateTitle('Hello'));
-console.log('check "Hello!"', validateTitle('Hello!'));
-console.log('check "1ello"', validateTitle('1hello'));
-console.log('check "1ello?"', validateTitle('1hello?'));
-console.log('check "hi" > 2', validateTitle('hi'));
-console.log('check "helloooooooooooooooo" less 20', validateTitle('helloooooooooooooooo'));
-console.log('check "?hello" less 20', validateTitle('?hello'));
+console.log('check "Title!"', validateTitle('Title!'));
+console.log('check "s"', validateTitle('s'));
+console.log('check "12title"', validateTitle('12title'));
+console.log('check "Title?"', validateTitle('Title'));
+console.log('check "false"', validateTitle(false));
 
 const sum = (num1, num2) => {
   const getWidthType = (n) => ((typeof n !== 'string' && !(n % 15)) ? n * -1 : Number(n));
   return getWidthType(num1) + getWidthType(num2);
 };
 
-console.log('check "1, 2"', sum('1', 2));
-console.log('check "1, 15"', sum('1', 15));
-console.log('check "1, 25"', sum('1', 25));
-console.log('check "1, 3"', sum('1', 3));
-console.log('check "1, 30"', sum('1', 30));
-console.log('check "15, 15"', sum(15, 15));
+console.log(sum('25', 15));
+console.log(sum(41, '3'));
+console.log(sum('3', 45));
+console.log(sum('15', 15));
