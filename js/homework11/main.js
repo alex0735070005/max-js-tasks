@@ -6,19 +6,21 @@ function validateTitle(title) {
     return 'incorect data';
   }
 
-  if ((title.length - 2) * (title.length - 20) > 0) {
+  if (title.length < 2 || title.length > 20) {
     return 'INVALID';
   }
 
-  const checkData = [' ','!',':','-','?','.',','];
+  const checkData = [' ', '!', ':', '-', '?', '.', ','];
 
-  const fChar = title[0];
+  const isValidChars = !title.split('').filter((char, index) => {
+    const code = char.codePointAt();
+    if (!index) {
+      return (code < 65 || code > 90);
+    }
+    return ((code < 65 || code > 122) && !checkData.includes(char));
+  }).length;
 
-  const isContainChars = !!(title.split('').find((char) => checkData.includes(char)));
-
-  const isValidFChar = ((fChar.codePointAt() - 65) * (fChar.codePointAt() - 90)) <= 0;
-
-  return (isContainChars && isValidFChar) ? 'VALID' : 'INVALID';
+  return isValidChars ? 'VALID' : 'INVALID';
 }
 
 console.log('check "hello"', validateTitle('hello'));
@@ -30,7 +32,10 @@ console.log('check "hi" > 2', validateTitle('hi'));
 console.log('check "helloooooooooooooooo" less 20', validateTitle('helloooooooooooooooo'));
 console.log('check "?hello" less 20', validateTitle('?hello'));
 
-const sum = (num1, num2) => Number(num1) + (num2 % 15 ? num2 : num2 * -1);
+const sum = (num1, num2) => {
+  const getWidthType = (n) => ((typeof n !== 'string' && !(n % 15)) ? n * -1 : Number(n));
+  return getWidthType(num1) + getWidthType(num2);
+};
 
 console.log('check "1, 2"', sum('1', 2));
 console.log('check "1, 15"', sum('1', 15));
