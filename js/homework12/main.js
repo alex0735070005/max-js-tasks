@@ -6,7 +6,7 @@
  */
 
 function tickets(persons = []) {
-  const bills = { 100: 0, 50: 0, 25: 0 };
+  const bills = {100: 0, 50: 0, 25: 0};
 
   const cost = 25;
 
