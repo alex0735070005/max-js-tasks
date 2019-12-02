@@ -6,7 +6,7 @@
  */
 
 function tickets(persons = []) {
-  const bills = {100: 0, 50: 0, 25: 0};
+  const bills = { 100: 0, 50: 0, 25: 0 };
 
   const cost = 25;
 
@@ -71,3 +71,58 @@ function getSum(a, b) {
 }
 
 console.log(getSum(111111, 222222));
+
+const listPosts = [
+  {
+    id: 1,
+    post: 'some post 1',
+    title: 'title 1',
+    author: 'Rimus',
+    comments: [
+      {id: 1.1, comment: 'some comment 1', title: 'title comment 1', author: 'Dasha'},
+      {id: 1.2, comment: 'some comment 1', title: 'title comment 3', author: 'Vasya'},
+      {id: 1.3, comment: 'some comment 1', title: 'title comment 4', author: 'Rimus'},
+    ],
+  },
+  {
+    id: 2,
+    post: 'some post 2',
+    title: 'title 2',
+    author: 'Rimus',
+    comments: [
+      {id: 2.1, comment: 'some comment 1', title: 'title comment 1', author: 'Rimus'},
+      {id: 2.2, comment: 'some comment 1', title: 'title comment 3', author: 'Rimus'},
+      {id: 2.3, comment: 'some comment 1', title: 'title comment 4', author: 'Olya'},
+    ],
+  },
+  {
+    id: 3,
+    post: 'some post 2',
+    title: 'title 2',
+    author: 'Vadya',
+    comments: [
+      {id: 3.1, comment: 'some comment 1', title: 'title comment 1', author: 'Rimus'},
+      {id: 3.2, comment: 'some comment 1', title: 'title comment 2', author: 'Nastya'},
+    ],
+  },
+  {
+    id: 3,
+    post: 'some post 2',
+    title: 'title 2',
+    author: 'Rimus',
+  },
+];
+
+const getQuantityPostByAuthor = (posts, name) => {
+  return posts.reduce((ak, post) => {
+    if (post.author === name) {
+      ak.posts++;
+    }
+    if (post.comments) {
+      ak.comments += post.comments.filter(({author}) => author === name).length;
+    }
+    return ak;
+  }, {posts: 0, comments: 0});
+};
+
+console.log(getQuantityPostByAuthor(listPosts, 'Rimus'));
