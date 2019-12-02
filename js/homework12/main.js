@@ -72,6 +72,7 @@ function getSum(a, b) {
 
 console.log(getSum(111111, 222222));
 
+// data for task 3
 const listPosts = [
   {
     id: 1,
@@ -113,6 +114,12 @@ const listPosts = [
   },
 ];
 
+/**
+ * task-3
+ * @param posts array
+ * @param name string
+ * @return object
+ */
 const getQuantityPostByAuthor = (posts, name) => {
   return posts.reduce((ak, post) => {
     if (post.author === name) {
