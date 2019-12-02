@@ -1,0 +1,36 @@
+The new "how to train your dragon" movie has just been released! 
+There are a lot of people at the cinema box office standing a hige line. 
+Each of them has a single 100,50, or 25 dollars bill. 
+A "batman v Superman: Dawn of justice" ticket costs 25 dollars. 
+Vasya is currently working as clerk. He wants to sell a ticket to every
+single person in this line.
+Can Vasya sell a ticket to each person and give the change if he initially
+has no money and sells the tickets strictly in the order people follow in 
+the line ? Return "Yes", if vasya can sell a ticket to each person and give
+the change. Otherwise return "No". Can Vasya sell a ticket to each person
+and give the change?
+
+Новый фильм «Как приручить дракона» только что вышел! 
+В кассе кинотеатра много людей, стоящих в очереди. 
+Каждый из них имеет одну купюру в 100, 50 или 25 долларов. 
+Билет «Бэтмен против Супермена: Рассвет правосудия» стоит 25 долларов. 
+Вася сейчас работает клерком. Он хочет продать билет каждому человеку 
+в этой линии.
+Может ли Вася продать билет каждому человеку и дать сдачу, если у него 
+изначально нет денег и он продает билеты строго в том порядке, в котором 
+люди следуют в очереди? Верните «Да», если Вася может продать билет 
+каждому человеку и дать сдачу. В противном случае верните «Нет». 
+Может ли Вася продать билет каждому человеку и дать сдачу?
+
+
+write a function that gets two infinite numbers as strings. 
+You should return the result of these two numbers sum as string. 
+Mathematical
+operation with these two numbers is unavailable. Dont use bigint
+
+
+
+написать функцию, которая получает два бесконечных числа в виде строк. 
+Вы должны вернуть результат этих двух чисел sum в виде строки.
+Математическая операция с этими двумя числами недоступна. 
+Не используйте bigint
