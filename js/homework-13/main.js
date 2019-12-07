@@ -59,6 +59,11 @@ ladder.up().up().down().up().showStep();
 const sum = (a, b, c) => {
   return a + b + c;
 };
+
+var mul = function (a, b, c) {
+  return a + b + c;
+};
+
 console.log('----task 3----');
 // ES6
 const applyAllES6 = (callback, ...data) => callback(...data);
@@ -75,7 +80,7 @@ var applyAllES5 = function (callback) {
   return callback.apply(null, data);
 };
 
-console.log('applyAllES5', applyAllES5(sum, 1, 2, 8));
+console.log('applyAllES5', applyAllES5(mul, 2, 3, 4));
 
 /**
  * Task-4
